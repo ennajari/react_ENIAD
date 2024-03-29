@@ -1,4 +1,13 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React.js Readme</title>
+</head>
+<body>
+    <header>
+        
         <p>This repository contains code for building user interfaces using React.js, a popular JavaScript library maintained by Facebook. React.js is widely used for creating interactive and dynamic web applications with its component-based architecture.</p>
     </header>
     <section id="getting-started">
