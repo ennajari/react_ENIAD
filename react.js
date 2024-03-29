@@ -1,20 +1,23 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-
-function Counter() {
-  const [count, setCount] = useState(0);
-
-  const increment = () => {
-    setCount(count + 1);
-  };
-
-  return (
-    <div>
-      <h1>Compteur</h1>
-      <p>Valeur : {count}</p>
-      <button onClick={increment}>Incrémenter</button>
-    </div>
-  );
-}
-
-ReactDOM.render(<Counter />, document.getElementById('root'));
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>Hello world</title>
+ <!-- Script tags including React -->
+ <script
+src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js
+"></script>
+ <script
+src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/reactdom.min.js"></script>
+ <script src="https://unpkg.com/babel-standalone@6/babel.min.js">
+</script>
+</head>
+<body>
+ <div id="app"></div>
+ <script type="text/babel">
+ ReactDOM.render(
+ <h1>Hello world</h1>,
+ document.querySelector('#app')
+ );
+ </script>
+</body>
+</html>
