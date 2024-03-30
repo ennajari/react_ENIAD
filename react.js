@@ -6,6 +6,7 @@
  <script
 src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js
 "></script>
+ 
  <script
 src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/reactdom.min.js"></script>
  <script src="https://unpkg.com/babel-standalone@6/babel.min.js">
