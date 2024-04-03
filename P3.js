@@ -4,4 +4,4 @@ function NombresPairs(Tabl) {
 
 Tabl1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 nombresPairs = NombresPairs(Tabl1);
-console.log(nombresPairs); 
+console.log(nombresPairs);
