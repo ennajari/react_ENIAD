@@ -39,12 +39,12 @@
 .btn{
   margin: 50% 0% 0% 45%;
   padding: 15px;
-  color: rgb(98, 255, 0);
+  color: rgb(0, 0, 0);
   background-color: aquamarine;
   border-radius: 12em;
   font-size: xx-large;
 }
 .btn:hover{
-  background-color: lightgreen;
+  background-color: rgb(110, 171, 151);
   cursor: pointer;
 }
