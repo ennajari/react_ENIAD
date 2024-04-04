@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+.btn{
+  margin: 50% 0% 0% 45%;
+  padding: 15px;
+  color: red;
+  background-color: aquamarine;
+  border-radius: 12em;
+  font-size: xx-large;
+}
+.btn:hover{
+  background-color: lightgreen;
+  cursor: pointer;
+}
