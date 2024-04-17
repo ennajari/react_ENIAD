@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import './App.css';
 
-function App() {
-  const [clickCount, setClickCount] = useState(0);
-
-  const handleClick = () => {
-    setClickCount(clickCount + 1);
-  };
-  
+function App(){
+  const [count,SetCount]=useState(0);
+  const HandCleck = () => {
+    SetCount(count+1);
+  }
   return (
     <>
-      <button className="btn" onClick={handleClick}>Clicked {clickCount} times</button>
+    <button className='btn' onClick = {HandCleck}>Clicked {count}</button>
     </>
   );
 }
