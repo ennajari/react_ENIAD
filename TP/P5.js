@@ -1,6 +1,7 @@
-
 const chargerDonnees = async (url) => {
+    
     try {
+        
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error('Erreur lors du chargement des données');
