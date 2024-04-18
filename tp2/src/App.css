@@ -1,6 +1,11 @@
 .p1 {
   box-shadow: 1px 1px 12px 0px black;
   border-radius: 2rem;
+  cursor:pointer;
+}
+.p1:hover{
+  box-shadow: 1px 1px 12px 0px rgb(194, 98, 98);
+
 }
 img{
   margin-left: 25%;
@@ -33,6 +38,8 @@ button{
 button:hover{
   background-color: rgba(189, 178, 19, 0.65);
   cursor: pointer;
+  box-shadow: 1px 1px 12px 0px rgb(140, 255, 0);
+
 }
 .App{
   margin-top: 15%;

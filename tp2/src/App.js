@@ -2,7 +2,6 @@ import './App.css';
 
 const Product = ({ product }) => {
   const addToCart = () => {
-    // Logique pour ajouter le produit au panier
     console.log(`Ajouter au panier: ${product.title}`);
   };
 
