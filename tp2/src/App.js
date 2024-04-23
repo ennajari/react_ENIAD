@@ -68,7 +68,7 @@ function App() {
     <div className="App">
       <Search handleSearch={handleSearch} />
       <Products products={filteredProducts} addToCart={addToCart} />
-      <p>Nombre de produits dans le panier : {cart.length}</p>
+      <p id='pf'>Nombre de produits dans le panier : {cart.length}</p>
     </div>
   );
 }
