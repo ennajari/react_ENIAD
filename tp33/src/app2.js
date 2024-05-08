@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [username, setUsername] = useState();
+  const [username, setUsername] = useState('');
 
   const renderErrorMessage = (name) =>
     errorMessages.name === name && <div className="error">{errorMessages.message}</div>;
@@ -18,8 +18,7 @@ function App() {
         setErrorMessages({ name: "upass", message: errors.upass });
       } else {
         setIsSubmitted(true);
-
-        setUsername(userData.username);
+        setUsername(userData.username); // Store the username
       }
     } else {
       setErrorMessages({ name: "uname", message: errors.uname });
@@ -51,8 +50,7 @@ function App() {
 
   const database = [
     { username: "user1", password: "pass1" },
-    { username: "user2", password: "pass2" },
-    { username: "Abdellah", password: "123" }
+    { username: "user2", password: "pass2" }
   ];
 
   const errors = {
@@ -65,7 +63,7 @@ function App() {
       {isSubmitted ? (
         <div>
           <div className="title">Accueil</div>
-          <div>Bonjour {username}</div>
+          <div>Bonjour {username}</div> {/* Display the username */}
         </div>
       ) : (
         renderForm
