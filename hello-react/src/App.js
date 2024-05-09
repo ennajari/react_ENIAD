@@ -34,13 +34,14 @@ const App = () => {
     const password = formData.get("upass");
     const userData = database.find(user => user.username === username);
     if (userData) {
-      if (userData.password === password) {
-        setIsSubmitted(true);
-      } else {
-        setErrorMessages({ upass: errors.upass });
-      }
+      setErrorMessages({ uname: "Cet identifiant existe déjà." });
     } else {
-      setErrorMessages({ uname: errors.uname });
+      const passRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+      if (!passRegex.test(password)) {
+        setErrorMessages({ upass: "Le mot de passe doit contenir au moins 8 caractères, des lettres, des nombres et des symboles." });
+      } else {
+        setIsSubmitted(true);
+      }
     }
   };
 
@@ -73,7 +74,7 @@ const App = () => {
 
   const renderForm = (
     <div className="login-form">
-      <div className="title">Connexion</div>
+      <div className="title">Inscription</div>
       <div className="form">
         <form onSubmit={handleSubmit}>
           <div className="input-container">
@@ -87,13 +88,16 @@ const App = () => {
             {renderErrorMessage("upass")}
           </div>
           <div className="input-container">
-            <label htmlFor="dateNaissance">Date de naissance:</label>
+            <label htmlFor="dob">Date de naissance:</label>
             <input
               type="date"
-              id="dateNaissance"
-              name="dateNaissance"
+              id="dob"
+              name="dob"
+              value={formData.dob}
+              onChange={handleChange}
               required
             />
+            {renderErrorMessage("dob")}
           </div>
           <div className="input-container">
             <label>Ville </label>
@@ -127,7 +131,7 @@ const App = () => {
             {renderErrorMessage("hobbies")}
           </div>
           <div className="button-container">
-            <input type="submit" value="Se connecter" />
+            <input type="submit" value="S'inscrire" />
           </div>
         </form>
       </div>
@@ -139,7 +143,7 @@ const App = () => {
       {isSubmitted ? (
         <div>
           <div className="title">Accueil</div>
-          <div>Bonjour</div>
+          <div>Inscription réussie !</div>
         </div>
       ) : (
         renderForm

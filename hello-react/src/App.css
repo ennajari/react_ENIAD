@@ -50,8 +50,14 @@ input[type="checkbox"] {
 
 .button-container {
   text-align: center;
+  background-color: aliceblue;
+  padding: 1%;
 }
-
+.button-container:hover {
+  text-align: center;
+  background-color: aliceblue;
+  padding: 1.5%;
+}
 .error {
   color: red;
   font-size: 14px;
