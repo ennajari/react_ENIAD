@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './App.css'; // Importer le fichier CSS pour appliquer les styles
+import './App.css';
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -19,9 +19,9 @@ const App = () => {
   }, []);
 
   const handleDelete = (productId) => {
-    // Filtrer les produits pour exclure celui avec l'ID spécifié
+  
     const updatedProducts = products.filter(product => product.id !== productId);
-    // Mettre à jour l'état avec les produits filtrés
+    
     setProducts(updatedProducts);
   };
 
