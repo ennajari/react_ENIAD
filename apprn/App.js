@@ -1,38 +1,24 @@
-// Utilisateurs.js
-import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, TouchableOpacity } from 'react-native';
-import axios from 'axios';
+// App.js
+import React from 'react';
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import UsersScreen from './UsersScreen';
+import PostsScreen from './PostsScreen';
+import ProfileScreen from './ProfileScreen';
 
-const Utilisateurs = ({ navigation }) => {
-  const [utilisateurs, setUtilisateurs] = useState([]);
+const Drawer = createDrawerNavigator();
 
-  useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/users')
-      .then(response => {
-        se&tUtilisateurs(response.data);
-      })
-      .catch(error => {
-        console.error('Erreur de récupération des utilisateurs:', error);
-      });
-  }, []);
-
-  const handleUtilisateurPress = (utilisateur) => {
-    navigation.navigate('Articles', { utilisateur });
-  };
-
+const App = () => {
   return (
-    <View>
-      <FlatList
-        data={utilisateurs}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => handleUtilisateurPress(item)}>
-            <Text>{item.name}</Text>
-          </TouchableOpacity>
-        )}
-      />
-    </View>
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="Utilisateurs">
+        <Drawer.Screen name="Utilisateurs" component={UsersScreen} />
+        <Drawer.Screen name="Articles" component={PostsScreen} />
+        <Drawer.Screen name="Profil" component={ProfileScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 };
 
-export default Utilisateurs;
+export default App;
